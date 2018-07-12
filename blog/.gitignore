@@ -1,0 +1,8 @@
+*.pyc
+*idea*
+*~
+*venv
+*.map
+*.scss
+__pycache__
+.DS_Store
