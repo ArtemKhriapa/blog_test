@@ -7,6 +7,20 @@ class ArticleSerializer(serializers.ModelSerializer):
         model = Article
         fields = (
             'id',
+            'date',
+            'header',
             'text',
-            'user',
+            'image'
+        )
+class ArticleBreifSerializer(serializers.ModelSerializer):
+
+    text = serializers.ReadOnlyField(source='shorttext')
+
+    class Meta:
+        model = Article
+        fields = (
+            'id',
+            'header',
+            'text',
+            'image'
         )

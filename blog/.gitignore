@@ -6,3 +6,7 @@
 *.scss
 __pycache__
 .DS_Store
+*images
+*.jpg
+*.jpeg
+*utils*
