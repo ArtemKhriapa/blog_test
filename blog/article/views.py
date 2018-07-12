@@ -3,6 +3,11 @@ from rest_framework import generics
 from rest_framework.pagination import PageNumberPagination
 from .models import Article
 from .serializers import ArticleSerializer, ArticleBreifSerializer
+from django.shortcuts import render
+
+def HomeView(request):
+    return render(request, 'index.html')
+
 
 
 class CustomPagePagination(PageNumberPagination):

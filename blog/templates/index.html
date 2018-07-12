@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
+</head>
+<body>
+    <section>
+    </section>
+
+    <section>
+        <span>Its try to play with FE and BE. D'nt kill me ))</span>
+    </section>
+
+     <form >
+         <!--<input type="button" onclick="javascript:post_new('{{user.id}}')" value="Create new record" /><br>-->
+         <input type="text" id="newtext" placeholder="text..." ><br>
+     </form>
+    <section>
+        <div class="container">
+            <div id="data-container" align="center" ></div>
+                <div id="navigation" align="center">
+                    <input type="button" title="Click to get previous page" onclick="buttonPrev();" value="<<Prev"/>
+                    <input type="button" title="Click to get next page" onclick="buttonNext();" value="Next>>"/>
+                </div>
+        </div>
+    </section>
+    <script>
+        getData(currentUrl);
+    </script>
+</body>
+</html>
+
