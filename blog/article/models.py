@@ -1,11 +1,6 @@
 from django.db import models
 from datetime import datetime
 
-# done fixme: metod/property - publish for publishing post
-# done fixme: field - is_published (boolean fill from .publish())
-# done fixme: field - publish_date (fill from .publish())
-# done fixme: include .publish in admin for publishing
-
 class Article(models.Model):
     is_publish = models.BooleanField(default = False)
     header = models.TextField(max_length = 256)
@@ -20,10 +15,10 @@ class Article(models.Model):
         self.is_publish = True
         self.save()
 
-    #first 7 words in text for sort representation
+    #first 7 words in text for sort representation in FE
     @property
     def shorttext(self):
         return ' '.join(self.text.split(' ')[:7]) + ' ...'
 
     def __str__(self):
-        return "%s %s %s" % (self.id, self.date, self.header)
+        return "%s published: %s %s" % (self.id, self.is_publish, self.header)

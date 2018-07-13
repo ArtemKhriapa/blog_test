@@ -12,6 +12,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             'text',
             'image'
         )
+
 class ArticleBreifSerializer(serializers.ModelSerializer):
 
     text = serializers.ReadOnlyField(source='shorttext')

@@ -2,7 +2,7 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework import status
 from ..models import Article
-# from utils.helpers_for_tests import dump
+from utils.helpers_for_tests import dump
 
 
 class ArticleTest(TestCase):
@@ -13,7 +13,9 @@ class ArticleTest(TestCase):
         self.c = APIClient()
         self.article = Article.objects.create(text = self.test_text, header = self.test_header)
 
+
     def test_get_blog(self):
+        self.article.publish_it
         response = self.c.get('/blog/all/')
 
         # print (dump(response))
@@ -22,7 +24,14 @@ class ArticleTest(TestCase):
         self.assertEqual(response.data['results'][0]['text'], self.article.shorttext)
         self.assertEqual(response.data['results'][0]['header'], self.test_header)
 
-    def test_get_article(self):
+    def test_get_unpublished_article(self):
+        response = self.c.get('/blog/id/{}/'.format(self.article.id))
+
+        # print (dump(response))
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_get_published_article(self):
+        self.article.publish_it
         response = self.c.get('/blog/id/{}/'.format(self.article.id))
 
         # print (dump(response))
