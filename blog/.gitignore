@@ -1,13 +1,13 @@
 .idea
 __pycache__
-*idea*
+*idea
 *~
 *.map
-*scss
+*.scss
 *images
 *.jpg
 *.jpeg
-*utils*
+*utils
 node_modules
 *.sqlite3
 *.xml
