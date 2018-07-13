@@ -1,0 +1,37 @@
+1)
+(myvenv)ubuntu@ip-172-31-18-57:~/KhriapaArtem/myblog/blog_test/blog$ python3 manage.py migrate
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+article.Article.image: (fields.E210) Cannot use ImageField because Pillow is not installed.
+	HINT: Get Pillow at https://pypi.python.org/pypi/Pillow or run command "pip install Pillow".
+(myvenv)ubuntu@ip-172-31-18-57:~/KhriapaArtem/myblog/blog_test/blog$ python3 manage.py makemigrations
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+article.Article.image: (fields.E210) Cannot use ImageField because Pillow is not installed.
+	HINT: Get Pillow at https://pypi.python.org/pypi/Pillow or run command "pip install Pillow".
+
+when i try install pip install Pillow:
+
+a required dependency when compiling Pillow from source.
+Please see the install instructions at:
+
+   https://pillow.readthedocs.io/en/latest/installation.html
+
+another try with setuptools and :
+
+    Successfully installed Pillow
+    Cleaning up...
+
+    article.Article.image: (fields.E210) Cannot use ImageField because Pillow is not installed.
+    HINT: Get Pillow at https://pypi.python.org/pypi/Pillow or run command "pip install Pillow".
+
+2)without ImageField
+    all is ok but
+
+    Error: That port is already in use.
+
+    i use another port but the other is not open for outside (?)
+
+    try kill the process ?

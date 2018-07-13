@@ -10,7 +10,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             'publish_date',
             'header',
             'text',
-            # 'image'
+            'image'
         )
 
 class ArticleBreifSerializer(serializers.ModelSerializer):
@@ -24,5 +24,5 @@ class ArticleBreifSerializer(serializers.ModelSerializer):
             'publish_date',
             'header',
             'text',
-            # 'image',
+            'image',
         )

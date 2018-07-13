@@ -7,7 +7,7 @@ class Article(models.Model):
     text = models.TextField()
     date = models.DateTimeField(auto_now=True)
     publish_date = models.TextField(blank=True, max_length = 50,null=True, default= None)
-    # image = models.ImageField(blank=True, upload_to='static/images')
+    image = models.ImageField(blank=True, upload_to='static/images')
 
     @property
     def publish_it(self):
