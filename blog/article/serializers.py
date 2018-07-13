@@ -21,7 +21,8 @@ class ArticleBreifSerializer(serializers.ModelSerializer):
         model = Article
         fields = (
             'id',
+            'publish_date',
             'header',
             'text',
-            'image'
+            'image',
         )
