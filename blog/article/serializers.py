@@ -7,7 +7,7 @@ class ArticleSerializer(serializers.ModelSerializer):
         model = Article
         fields = (
             'id',
-            'date',
+            'publish_date',
             'header',
             'text',
             'image'

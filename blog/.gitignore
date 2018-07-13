@@ -3,10 +3,12 @@
 *~
 *venv
 *.map
-*.scss
+*scss
 __pycache__
 .DS_Store
 *images
 *.jpg
 *.jpeg
 *utils*
+node_modules
+*.sqlite3

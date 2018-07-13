@@ -5,5 +5,5 @@ from article.views import HomeView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('article.urls')),
-    url(r'^', HomeView),
+    url(r'myblog/', HomeView),
 ]
