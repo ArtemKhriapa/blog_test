@@ -10,9 +10,9 @@
     <title>Myblog testcase </title>
 </head>
 <body>
-    <header class="border-bottom border-secondary">
+    <header class="border-bottom border-secondary mb-2">
          <div class="container ">
-                <nav class="navbar navbar-expand-md navbar-light text-uppercase">
+                <nav class="navbar navbar-expand-md navbar-light text-uppercase py-0">
                     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
@@ -37,26 +37,29 @@
                 </nav>
         </div>
     </header>
-    <main role="main" class="container mb-5">
-        <section style="display: none">
-            <p>i need few hours for finish this FE</p>
-            <p>you can walk through the links</p>
-            <p>/blog/all/ for all publishieds posts</p>
-            <p>/blog/id/{id post} for publishied posts</p>
-            <span>I do not have much time, <i>hate</i> my current work but i must do it. But testcase in progress. The blog will be here soon...</span>
+    <main role="main" class="container mb-2">
+
+        <section style="display: none" class="nav-section" >
+            <div class="container">
+                <div align="center">
+                    <a id="article-button-prev" role="button" class="btn mt-auto btn-primary ml-auto text-capitalize">Prev page</a>
+                    <a id="article-button-next" class="btn mt-auto btn-primary ml-auto text-capitalize">Next page</a>
+                </div>
+            </div>
         </section>
-        <section id="blog-content">
-            <div class="row content my-4 rounded border-secondary" id="content" style="display: none">
+
+        <section style="display: none">
+            <div class="row content my-2 rounded border-secondary" id="content" style="display: none">
                     <div class="col-md-12 border rounded border-secondary">
                         <div class="feature d-flex py-3 rounded border-secondary">
                             <div class="image w-50 pr-2">
-                                <img id="article-image" class="img-thumbnail" src="{% static 'images/6a97ee20-bb7d-48d8-8780-1c0b1bb62fe4.jpeg' %}" alt="">
+                                <img id="article-image" class="img-thumbnail w-100" src="#" alt="">
                             </div>
                             <div class="d-flex flex-column w-75">
-                                <h5 id="header-text" class="text-uppercase">font-awesome icons</h5>
-                                <p id="article-short">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad animi, aut commodi consequatur consequuntur cum debitis </p>
+                                <h5 id="header-text" class="text-uppercase">Title in here</h5>
+                                <p id="article-short">Shorted article in here </p>
                                 <div class="d-flex button-section mt-auto ">
-                                    <span id="publishied-date" class="text-muted mr-auto "> publishied in : </span>
+                                    <span id="publishied-date" class="text-muted mr-auto "> publishied datetime tere : </span>
                                     <a id="article-button" role="button" href="#" class="btn mt-auto btn-primary ml-auto text-capitalize">read more</a>
                                 </div>
                             </div>
@@ -64,6 +67,19 @@
                     </div>
                 </div>
         </section>
+
+        <section id="blog-content">
+        </section>
+
+        <section style="display: none" class="nav-section" >
+            <div class="container">
+                <div align="center">
+                    <a id="article-button-prev" role="button" class="btn mt-auto btn-primary ml-auto text-capitalize">Prev page</a>
+                    <a id="article-button-next" class="btn mt-auto btn-primary ml-auto text-capitalize">Next page</a>
+                </div>
+            </div>
+        </section>
+
     </main>
     <footer class="footer bg-light border-secondary border-top">
         <div class="container">
@@ -71,22 +87,12 @@
         </div>
     </footer>
 
-        <!--<div class="container">-->
-            <!--<div id="data-container" align="center" ></div>-->
-                <!--<div id="navigation" align="center">-->
-                    <!--<input type="button" title="Click to get previous page" onclick="buttonPrev();" value="<<Prev"/>-->
-                    <!--<input type="button" title="Click to get next page" onclick="buttonNext();" value="Next>>"/>-->
-                <!--</div>-->
-        <!--</div>-->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
     <script>
-
-        DJANGO_STATIC_URL = '{{ STATIC_URL }}';
         getData(currentUrl);
     </script>
 </body>
