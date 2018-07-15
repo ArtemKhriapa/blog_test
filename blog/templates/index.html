@@ -10,7 +10,7 @@
     <title>Myblog testcase </title>
 </head>
 <body>
-    <header>
+    <header class="border-bottom border-secondary">
          <div class="container ">
                 <nav class="navbar navbar-expand-md navbar-light text-uppercase">
                     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
         </div>
     </header>
     <main role="main" class="container mb-5">
-        <section>  
+        <section style="display: none">
             <p>i need few hours for finish this FE</p>
             <p>you can walk through the links</p>
             <p>/blog/all/ for all publishieds posts</p>
@@ -50,14 +50,14 @@
                     <div class="col-md-12 border rounded border-secondary">
                         <div class="feature d-flex py-3 rounded border-secondary">
                             <div class="image w-50 pr-2">
-                                <img class="img-thumbnail" src="{% static 'images/6a97ee20-bb7d-48d8-8780-1c0b1bb62fe4.jpeg' %}" alt="">
+                                <img id="article-image" class="img-thumbnail" src="{% static 'images/6a97ee20-bb7d-48d8-8780-1c0b1bb62fe4.jpeg' %}" alt="">
                             </div>
                             <div class="d-flex flex-column w-75">
                                 <h5 id="header-text" class="text-uppercase">font-awesome icons</h5>
                                 <p id="article-short">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad animi, aut commodi consequatur consequuntur cum debitis </p>
                                 <div class="d-flex button-section mt-auto ">
                                     <span id="publishied-date" class="text-muted mr-auto "> publishied in : </span>
-                                    <button type='button' href="#" class="btn mt-auto btn-primary ml-auto text-capitalize">read more</button>
+                                    <a id="article-button" role="button" href="#" class="btn mt-auto btn-primary ml-auto text-capitalize">read more</a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                 </div>
         </section>
     </main>
-    <footer class="footer fixed-bottom bg-light border-secondary border-top">
+    <footer class="footer bg-light border-secondary border-top">
         <div class="container">
             <p> footer in here </p>
         </div>
@@ -85,6 +85,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
     <script>
+
+        DJANGO_STATIC_URL = '{{ STATIC_URL }}';
         getData(currentUrl);
     </script>
 </body>
