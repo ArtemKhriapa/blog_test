@@ -47,30 +47,43 @@
                 </div>
             </div>
         </section>
-{#single page: in isolated div display none
-                button for back to list articles
-in script : getjson and filling div
-            hiding for all short article in button and unhiding fir single (read more)
-            revert in button (back to list articles)
-#}
-        <section style="display: none">
-            <div class="row content my-2 rounded border-secondary" id="content" style="display: none">
-                    <div class="col-md-12 border rounded border-secondary">
-                        <div class="feature d-flex py-3 rounded border-secondary">
-                            <div class="image w-50 pr-2">
-                                <img id="article-image" class="img-thumbnail w-100" src="#" alt="">
-                            </div>
-                            <div class="d-flex flex-column w-75">
-                                <h5 id="header-text" class="text-uppercase">Title in here</h5>
-                                <p id="article-short">Shorted article in here </p>
-                                <div class="d-flex button-section mt-auto ">
-                                    <span id="publishied-date" class="text-muted mr-auto "> publishied datetime tere : </span>
-                                    <a id="article-button" role="button" href="#" class="btn mt-auto btn-primary ml-auto text-capitalize">read more</a>
-                                </div>
+        <section style="">
+            <div class="row content my-2 " id="content" style="display: none">
+                <div class="col-md-12 border rounded border-secondary">
+                    <div id="hidetext" style="display: none"></div>
+                    <div class="d-flex py-3 rounded border-secondary">
+                        <div class="image w-50 pr-2">
+                            <img id="article-image" class="img-thumbnail w-100" src="" alt="">
+                        </div>
+                        <div class="d-flex flex-column w-75">
+                            <h5 id="header-text" class="text-uppercase">Title in here</h5>
+                            <p id="article-short">Shorted article in here </p>
+                            <div class="d-flex button-section mt-auto ">
+                                <span id="publishied-date" class="text-muted mr-auto "> publishied datetime tere : </span>
+                                <a id="article-button" role="button" href="#" class="btn mt-auto btn-primary ml-auto text-capitalize">read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row my-2 " id="content-large" style="display: none">
+                <div class="col-md-12 ">
+                    <div class="d-flex flex-column py-3 rounded border-secondary">
+                        <div class="button-section mt-auto  mx-auto">
+                            <a role="button" href="#" class="blog-button btn btn-primary text-capitalize">back to blog</a>
+                        </div>
+                        <h5 id="header-text" class="text-uppercase text-center">Title in here</h5>
+                        <div class="mx-auto">
+                            <img src="" class="img-fluid rounded article-image" alt="">
+                        </div>
+                        <p id="article">Shorted article in here </p>
+                        <span id="publishied-date" class="text-muted mr-auto "> publishied datetime tere : </span>
+                        <div class="button-section mt-auto  mx-auto">
+                            <a role="button" href="#" class="blog-button btn btn-primary text-capitalize">back to blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="blog-content">
