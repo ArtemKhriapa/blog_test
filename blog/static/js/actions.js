@@ -1,16 +1,18 @@
-function get_hostname(url) {
+function getHostname(url) {
     var m = url.match(/^http:\/\/[^/]+/);
     return m ? m[0] : null;
 };
 
-var currentUrl = get_hostname(document.URL) + '/blog/all/' ;
+var currentUrl = getHostname(document.URL) + '/blog/all/' ;
 
 function getData (Url) {
-    alert('in get data')
+    // get json from url
     $.getJSON(Url, function (data) {
 
+        // clear blogplace from old data
         $('#blog-content').empty();
 
+        // build new data from JSON
         for (var i in data.results) {
             var newArticle = $("#content").clone();
             //filling HTML from data
@@ -20,38 +22,27 @@ function getData (Url) {
             newArticle.find("#header-text").text(data.results[i].header);
             newArticle.find("#article-short").text(data.results[i].text);
             newArticle.find("#publishied-date").text(data.results[i].publish_date);
-            newArticle.find("#article-button").attr("href", get_hostname(document.URL) + '/blog/id/' + data.results[i].id );
+            newArticle.find("#article-button").attr("href", getHostname(document.URL) + '/blog/id/' + data.results[i].id );
             newArticle.find("#article-button").attr("target","_blank");
             $('#blog-content').append(newArticle);
         };
 
+        //jpen the buttons if next/prev page is avalable
         if ((data.next != null) || (data.previous != null)){
             $(".nav-section").attr("style", "");
         }
 
+        // actions for buttons
         $("#article-button-prev").click(function(){
             if (data.previous != null) {
-                alert("prev!");
                 getData (data.previous)
             }
         });
 
         $("#article-button-next").click(function(){
             if (data.next != null) {
-                alert("next!");
                 getData (data.next)
             }
         });
     });
 };
-
-
-// function buttonNext(window.dataNext) {
-//     $('#blog-content').empty();
-//     getData(dataNext);
-// };
-//
-// function buttonPrev(dataPrevious) {
-//     $('#blog-content').empty();
-//     getData(dataPrevious);
-// };
