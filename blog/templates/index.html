@@ -3,9 +3,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{#    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">#}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!--<script language="JavaScript" type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>-->
+
 
     <title>Myblog testcase </title>
 </head>
@@ -37,7 +37,7 @@
                 </nav>
         </div>
     </header>
-    <main role="main" class="container">
+    <main role="main" class="container mb-5">
         <section>  
             <p>i need few hours for finish this FE</p>
             <p>you can walk through the links</p>
@@ -45,22 +45,22 @@
             <p>/blog/id/{id post} for publishied posts</p>
             <span>I do not have much time, <i>hate</i> my current work but i must do it. But testcase in progress. The blog will be here soon...</span>
         </section>
-        <section>
-            <div class="row content" id="content">
-                    <div class="col-md-12 border border-danger">
-                        <div class="feature d-flex pr-3 pb-3">
+        <section id="blog-content">
+            <div class="row content my-4 rounded border-secondary" id="content" style="display: none">
+                    <div class="col-md-12 border rounded border-secondary">
+                        <div class="feature d-flex py-3 rounded border-secondary">
                             <div class="image w-50 pr-2">
                                 <img class="img-thumbnail" src="{% static 'images/6a97ee20-bb7d-48d8-8780-1c0b1bb62fe4.jpeg' %}" alt="">
                             </div>
                             <div class="d-flex flex-column w-75">
-                                <h5 class="text-uppercase">font-awesome icons</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad animi, aut commodi consequatur consequuntur cum debitis </p>
+                                <h5 id="header-text" class="text-uppercase">font-awesome icons</h5>
+                                <p id="article-short">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad animi, aut commodi consequatur consequuntur cum debitis </p>
                                 <div class="d-flex button-section mt-auto ">
-                                    <button type='button' href="#" class="btn mt-auto btn-primary ml-auto">Go somewhere</button>
+                                    <span id="publishied-date" class="text-muted mr-auto "> publishied in : </span>
+                                    <button type='button' href="#" class="btn mt-auto btn-primary ml-auto text-capitalize">read more</button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
         </section>
@@ -78,8 +78,6 @@
                     <!--<input type="button" title="Click to get next page" onclick="buttonNext();" value="Next>>"/>-->
                 <!--</div>-->
         <!--</div>-->
-    <!--</section>-->
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->

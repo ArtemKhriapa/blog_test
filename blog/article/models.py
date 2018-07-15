@@ -15,10 +15,10 @@ class Article(models.Model):
         self.is_publish = True
         self.save()
 
-    #first 7 words in text for sort representation in FE
+    #first 20 words in text for sort representation in FE
     @property
     def shorttext(self):
-        return ' '.join(self.text.split(' ')[:7]) + ' ...'
+        return ' '.join(self.text.split(' ')[:20]) + ' ...'
 
     def __str__(self):
         return "%s published: %s %s" % (self.id, self.is_publish, self.header)
