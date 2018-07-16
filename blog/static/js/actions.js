@@ -1,9 +1,10 @@
 function getHostname(url) {
-    var m = url.match(/^http:\/\/[^/]+/);
+    var m = url.match(/^https:\/\/[^/]+/);
     return m ? m[0] : null;
 };
 
 var currentUrl = getHostname(document.URL) + '/blog/all/' ;
+var host = getHostname(document.URL)
 
 function getData (Url) {
 
@@ -21,6 +22,7 @@ function getData (Url) {
             //filling HTML from data
             newArticle.attr("style", "");
             newArticle.find("#article-image").attr("src", data.results[i].image.slice(currentUrl.length-1));
+            // alert(data.results[i].image.slice(currentUrl.length-1))
             newArticle.find("#article-image").attr("alt", 'data.results[i].header');
             newArticle.find("#header-text").text(data.results[i].header);
             newArticle.find("#article-short").text(data.results[i].text);

@@ -26,7 +26,9 @@ SECRET_KEY = '&)ir2_9a&*7mf7ph=2b7l#rsjqn%++v_p^m45_70011xjfwmc#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'artemkhriapa1983.pythonanywhere.com',
+    ]
 
 
 # Application definition
@@ -129,4 +131,4 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'static').replace('\\', '/'),)
+STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '..','static', ).replace('\\', '/'),'/home/ArtemKhriapa1983/static')
