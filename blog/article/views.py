@@ -11,9 +11,9 @@ def HomeView(request):
 
 class CustomPagePagination(PageNumberPagination):
     #class for set pagination parameters
-    page_size = 10 #obj in page
+    page_size = 5 #obj in page
     page_size_query_param = 'page_size'
-    max_page_size = 10
+    max_page_size = 5
 
 class BlogView(generics.ListAPIView):
     serializer_class = ArticleBreifSerializer

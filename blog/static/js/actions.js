@@ -5,27 +5,6 @@ function getHostname(url) {
 
 var currentUrl = getHostname(document.URL) + '/blog/all/' ;
 
-function getArticle (Url){
-    alert('click')
-    $.getJSON(Url, function (data) {
-        $("#content-large").find("#header-text").text(data.header);
-        $("#content-large").find("#article").text(data.text);
-        $("#content-large").find("#publishied-date").text(data.publish_date);
-        alert(data.image.slice(currentUrl.length))
-        $("#content-large").find(".article-image").attr("src", data.image.slice(currentUrl.length));
-    });
-    $(".blog-button").click(
-        function(){
-            $("#blog-content").attr("style", "");
-            $("#content-large").attr("style", "display: none");
-        }
-    )
-    $("#blog-content").attr("style", "display: none");
-    $("#content-large").attr("style", "");
-    };
-
-
-
 function getData (Url) {
 
     // get json from url
@@ -46,11 +25,11 @@ function getData (Url) {
             newArticle.find("#header-text").text(data.results[i].header);
             newArticle.find("#article-short").text(data.results[i].text);
             newArticle.find("#publishied-date").text(data.results[i].publish_date);
-            // newArticle.find("#article-button").attr("value", getHostname(document.URL) + '/blog/id/' + data.results[i].id )
-            newArticle.find("#hidetext").text(id);
-            newArticle.find("#article-button").click(function() {
-                getArticle(newArticle.find("#hidetext").text())
-            });
+            newArticle.find("#article-button").attr("src", getHostname(document.URL) + '/blog/id/' + data.results[i].id )
+            // newArticle.find("#hidetext").text(id);
+            // newArticle.find("#article-button").click(function() {
+            //     getArticle()
+            // });
 
 
             // attr("ocClick", gerArticle(getHostname(document.URL) + '/blog/id/' + data.results[i].id ));
@@ -66,15 +45,45 @@ function getData (Url) {
         // actions for buttons
         $("#article-button-prev").click(
             function(){
+                // alert("prev")
                 if (data.previous != null) {
                     getData (data.previous)
                 }
         });
 
-        $("#article-button-next").click(function(){
+        $("#article-button-next").click(
+            function(){
             if (data.next != null) {
                 getData (data.next)
             }
         });
+
+        getArticle ()
     });
 };
+
+function getArticle (){
+
+    $(".article-button").click(
+        function (e) {
+            $.getJSON($(this).attr("src"), function (data) {
+                $("#content-large").find("#header-text").text(data.header);
+                $("#content-large").find("#article").text(data.text);
+                $("#content-large").find("#publishied-date").text(data.publish_date);
+                // alert(data.image.slice(currentUrl.length))
+                $("#content-large").find(".article-image").attr("src", data.image.slice(currentUrl.length));
+                $(".blog-button").click(
+                    function(){
+                        $("#blog-content").attr("style", "");
+                        $("#content-large").attr("style", "display: none");
+                        $(".nav-section").attr("style", "");
+                    }
+                );
+            $(".nav-section").attr("style", "display: none");
+            $("#blog-content").attr("style", "display: none");
+            $("#content-large").attr("style", "");
+            });
+    });
+};
+
+
