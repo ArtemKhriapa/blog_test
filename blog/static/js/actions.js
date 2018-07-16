@@ -76,10 +76,10 @@ function getArticle (){
                     function(){
                         $("#blog-content").attr("style", "");
                         $("#content-large").attr("style", "display: none");
-                        $(".nav-section").attr("style", "");
+                        // $(".nav-section").attr("style", "");
                     }
                 );
-            $(".nav-section").attr("style", "display: none");
+            // $(".nav-section").attr("style", "display: none");
             $("#blog-content").attr("style", "display: none");
             $("#content-large").attr("style", "");
             });
