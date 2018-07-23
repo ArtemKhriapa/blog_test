@@ -11,7 +11,7 @@ from django.template.loader import get_template, render_to_string
 from django.template import Context
 
 def TestView(request):
-    article_list = Article.objects.all()
+    article_list = Article.objects.filter(is_publish= True).order_by('-publish_date')
     t = get_template('test.html')
     html = {'article_list':article_list}
     return HttpResponse(t.render(html))

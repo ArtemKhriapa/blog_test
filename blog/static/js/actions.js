@@ -4,7 +4,7 @@ function getHostname(url) {
 };
 
 var currentUrl = getHostname(document.URL) + '/blog/all/' ;
-console.log(getHostname(document.URL))
+// console.log(getHostname(document.URL))
 function getData (Url) {
 
     // get json from url
