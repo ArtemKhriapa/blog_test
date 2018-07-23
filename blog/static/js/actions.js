@@ -71,7 +71,7 @@ function getArticle (){
                 $("#content-large").find("#article").text(data.text);
                 $("#content-large").find("#publishied-date").text(data.publish_date);
                 // alert(data.image.slice(currentUrl.length))
-                $("#content-large").find(".article-image").attr("src", data.image.slice(currentUrl.length));
+                $("#content-large").find(".article-image").attr("src", data.image.slice(currentUrl.length-1));
                 $(".blog-button").click(
                     function(){
                         $("#blog-content").attr("style", "");
