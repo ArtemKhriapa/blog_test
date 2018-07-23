@@ -4,7 +4,7 @@ function getHostname(url) {
 };
 
 var currentUrl = getHostname(document.URL) + '/blog/all/' ;
-
+console.log(getHostname(document.URL))
 function getData (Url) {
 
     // get json from url
@@ -20,7 +20,7 @@ function getData (Url) {
             var newArticle = $("#content").clone();
             //filling HTML from data
             newArticle.attr("style", "");
-            newArticle.find("#article-image").attr("src", data.results[i].image.slice(currentUrl.length-1));
+            newArticle.find("#article-image").attr("src", data.results[i].image);
             newArticle.find("#article-image").attr("alt", 'data.results[i].header');
             newArticle.find("#header-text").text(data.results[i].header);
             newArticle.find("#article-short").text(data.results[i].text);
@@ -71,7 +71,7 @@ function getArticle (){
                 $("#content-large").find("#article").text(data.text);
                 $("#content-large").find("#publishied-date").text(data.publish_date);
                 // alert(data.image.slice(currentUrl.length))
-                $("#content-large").find(".article-image").attr("src", data.image.slice(currentUrl.length-1));
+                $("#content-large").find(".article-image").attr("src", data.image);
                 $(".blog-button").click(
                     function(){
                         $("#blog-content").attr("style", "");
