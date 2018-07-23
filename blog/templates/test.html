@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-{% load static %}
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" rel="stylesheet" href="{% static 'css/main.css' %}">
-    <title>var 2</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>use shortcuts</title>
 </head>
 <body>
-<p>TEST</p>
-    <div class="content-box">
-{#        <p>here {{ article_list }}</p>#}
-        <ul>
+<p class="content-box">TEST django shortcuts</p>
+    <div class="container">
         {% for article in article_list %}
-            <li>
-                <strong>{{ article.header }}</strong>
-                <p>{{ article.text }}</p>
-            </li>
+            <div class="row content my-2 " id="content" style="">
+            <div class="col-md-12 border rounded border-secondary">
+                <div id="hidetext" style="display: none"></div>
+                <div class="d-flex py-3 rounded border-secondary">
+                    <div class="image w-50 pr-2">
+                        <img id="article-image" class="img-thumbnail w-100" src="{{ article.image.url }}" alt="{{ article.image.path}}">
+                    </div>
+                    <div class="d-flex flex-column w-75">
+                        <h5 id="header-text" class="text-uppercase">{{ article.header }}</h5>
+                        <p id="article-short">{{ article.shorttext }} </p>
+                        <div class="d-flex button-section mt-auto ">
+                            <span id="publishied-date" class="text-muted mr-auto ">{{ article.publish_date }}</span>
+                            <a id="article-button" role="button" href="#" class="btn mt-auto btn-primary ml-auto text-capitalize article-button">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% endfor %}
-        </ul>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
 </body>
 </html>
