@@ -1,7 +1,7 @@
-/*.container {*/
-  /*border: 1px solid red; }*/
+.content-box {
+  border: 1px solid red; }
 
-/*.content {*/
-  /*display: none !important; }*/
+.container {
+  border: 1px solid red; }
 
 /*# sourceMappingURL=styles.css.map */

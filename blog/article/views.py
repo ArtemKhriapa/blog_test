@@ -1,10 +1,21 @@
-from django.shortcuts import get_object_or_404
-from django.http import Http404
+# from django.shortcuts import get_object_or_404
+
 from rest_framework import generics
 from rest_framework.pagination import PageNumberPagination
 from .models import Article
 from .serializers import ArticleSerializer, ArticleBreifSerializer
 from django.shortcuts import render
+
+from django.http import Http404, HttpResponse
+from django.template.loader import get_template, render_to_string
+from django.template import Context
+
+def TestView(request):
+    article_list = Article.objects.filter(is_publish= True).order_by('-publish_date')
+    t = get_template('test.html')
+    html = {'article_list':article_list}
+    return HttpResponse(t.render(html))
+
 
 def HomeView(request):
     return render(request, 'index.html')
